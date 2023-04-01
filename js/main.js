@@ -1,5 +1,4 @@
 // js/main.js
-import { displayReviews } from "./displayReviews.js";
 import { styleStars } from "./displayStars.js";
 
 document.addEventListener("DOMContentLoaded", () => {

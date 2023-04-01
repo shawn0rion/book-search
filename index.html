@@ -4,23 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Search</title>
+    <link rel="stylesheet" href="css/styles.css" />
     <script
       src="https://kit.fontawesome.com/a541b204e2.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="container">
+      <h1>Book Search</h1>
       <div class="search-container">
-        <input type="text" placeholder="Title" class="search-input" />
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Enter book title"
+        />
         <button class="search-button">
           <i class="fas fa-search"></i>
         </button>
       </div>
-
       <div id="result"></div>
     </div>
-    <script src="js/main.js" type="module"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

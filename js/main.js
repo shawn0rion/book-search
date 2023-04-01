@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const result = document.getElementById("result");
 
   searchBtn.addEventListener("click", getBook);
+  bookNameRef.value = "The Fountainhead";
+  getBook();
 
   async function getBook() {
     let bookName = bookNameRef.value;
@@ -31,25 +33,36 @@ document.addEventListener("DOMContentLoaded", () => {
           // Display book information
           console.log(item);
           result.innerHTML = `
-          <div class="info">
-            <img src="${img}">
-            <h2>${item.title}</h2>
-            <div class="rating">
-              <div id="stars-container"></div>
-              <h4>${item.ratings_average.toFixed(1) || "N/A"}</h4>
-            </div>
-            <h3>Author(s):</h3>
-            <p>${author}</p>
-            <h3>First sentence: </h3>
-            <p>"${first_sentence[0]}"</p>
-            <h3>First published: <h3>
-            <p>${first_publish_year}</p>
-            <h3>Page count:</h3>
-            <p>${number_of_pages_median}</p>
-            <h3>Open Library ID:</h3>
-            <p>${olid}</p>
-            ...
-          </div>`;
+            <div class="info">
+                <img src="${img}">
+                <div>
+                <h2>${item.title}</h2>
+                <div class="rating">
+                    <div id="stars-container"></div>
+                    <h4>${item.ratings_average.toFixed(1) || "N/A"}</h4>
+                </div>
+                <div class="pair">
+                    <h3>Author(s):</h3>
+                    <p>${author}</p>
+                </div>
+                <div class="pair">
+                    <h3>First sentence: </h3>
+                    <p>"${first_sentence ? first_sentence[0] : ""}"</p>
+                </div>
+                <div class="pair">
+                    <h4>First published:</h4>
+                    <p>${first_publish_year}</p>
+                </div>
+                <div class="pair">
+                    <h4>Page count:</h4>
+                    <p>${number_of_pages_median}</p>
+                </div>
+                <div class="pair">
+                    <h4>Open Library ID:</h4>
+                    <p>${olid}</p>
+                </div>
+                </div>
+            </div>`;
 
           // Extract book popularity information
           const {
